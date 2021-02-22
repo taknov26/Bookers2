@@ -1,0 +1,21 @@
+<body>
+  <h1>Books</h1>
+    <table>
+      <thead>
+        <th colspan="1"></th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </thead>
+      <tbody>
+
+          <td>hoge</td>
+          <td><%= @book.title %></td>
+          <td><%= @book.opinion %></td>
+          <% if @book.user == current_user %>
+          <td><%= link_to "Edit", edit_book_path(@book) %></td>
+          <td><%= link_to "Delete", book_path(@book), method: :delete %></td>
+          <% end %>
+      </tbody>
+    </table>
+
+</body>

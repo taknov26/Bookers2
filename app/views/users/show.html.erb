@@ -1,0 +1,6 @@
+<body>
+  <div class="profile-container">
+    <p class="profile-name"><%= @user.name %></p>
+    <%= image_tag('no_image.jpg') %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  </div>
