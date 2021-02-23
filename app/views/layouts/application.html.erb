@@ -10,17 +10,17 @@
   </head>
 
   <body>
-    <h3>Bookers</h3>
+    <header>
+    <h3><%= link_to "Bookers", root_path %></h3>
     <% if user_signed_in? %>
       <li>
-        <%= link_to "Home", root_path %>
+        <%= link_to "Home", user_path(current_user.id) %>
       </li>
       <li>
-        <%= link_to "Users", root_path %>
-        <!--後からUser詳細ページ作る-->
+        <%= link_to "Users", users_path %>
       </li>
       <li>
-        <%= link_to "Books", root_path %>
+        <%= link_to "Books", books_path %>
       </li>
       <li>
         <%= link_to "logout", destroy_user_session_path, method: :delete %>
@@ -30,8 +30,7 @@
         <%= link_to "Home", root_path %>
       </li>
       <li>
-        <%= link_to "About", root_path %>
-        <!--後からAboutページ作る-->
+        <%= link_to "About", '/homes/about' %>
       </li>
       <li>
         <%= link_to "sign up", new_user_registration_path %>
@@ -40,6 +39,9 @@
         <%= link_to "login", new_user_session_path %>
       </li>
     <% end %>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 

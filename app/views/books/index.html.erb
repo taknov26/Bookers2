@@ -8,8 +8,13 @@
       </thead>
       <tbody>
       <% @books.each do |book| %>
-          <td>hoge</td>
-          <td><%= book.title %></td>
+          <td><%= link_to book.user do %>
+              <%= attachment_image_tag book.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"60x60" %>
+              <% end %>
+          </td>
+          <td><%= link_to book do %>
+            <%= book.title %>
+            <% end %></td>
           <td><%= book.opinion %></td>
       </tbody>
       <% end %>

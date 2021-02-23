@@ -1,5 +1,6 @@
 <h1>Editing book</h1>
 <%= form_with model:@book, local:true do |f| %>
+<%= render 'books/error_messages', book: f.object %>
 <p>Title</p>
   <%= f.text_field :title %>
 <p>Opinion</p>
