@@ -1,4 +1,5 @@
-<body>
+ <%= render 'books/list', book: @book, user: current_user %>
+
   <h1>Books</h1>
     <table>
       <thead>
@@ -19,5 +20,3 @@
       </tbody>
       <% end %>
     </table>
-
-</body>
