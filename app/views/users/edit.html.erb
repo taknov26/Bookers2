@@ -1,25 +1,31 @@
-<h1>User info</h1>
-<%= form_with model:@user, local:true do |f| %>
-<%= render 'users/error_messages', user: f.object %>
-  <label for="inputName">Name</label>
-  </p>
-  <p>
-  <%= f.text_field :name, autofocus: true, id:"inputName"%>
-  </p>
-  <p>
-  <%= attachment_image_tag @user, :profile_image, size: "60x60", fallback: "no_image.jpg"%>
-  </p>
-  <P>
-  <label for="inputImage">Image</label>
-  </P>
-  <p>
-  <%= f.attachment_field :profile_image %>
-  </p>
-  <p>
-  <label for="inputIntroduction">Introduction</label>
-  </p>
-  <p>
-  <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction"%>
-  </p>
-  <%= f.submit "Update user" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto">
+      <h1>User info</h1>
+      <%= form_with model:@user, local:true do |f| %>
+      <%= render 'users/error_messages', user: f.object %>
+        <label for="inputName">Name</label>
+        </p>
+        <p>
+        <%= f.text_field :name, autofocus: true, id:"inputName"%>
+        </p>
+        <p>
+        <%= attachment_image_tag @user, :profile_image, size: "60x60", fallback: "no_image.jpg"%>
+        </p>
+        <P>
+        <label for="inputImage">Image</label>
+        </P>
+        <p>
+        <%= f.attachment_field :profile_image %>
+        </p>
+        <p>
+        <label for="inputIntroduction">Introduction</label>
+        </p>
+        <p>
+        <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction"%>
+        </p>
+        <%= f.submit "Update user" %>
+      <% end %>
+    </div>
+  </div>
+</div>
