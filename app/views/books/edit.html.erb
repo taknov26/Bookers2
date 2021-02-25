@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="mx-auto">
-      <h1>Editing book</h1>
+      <h1>Editing Book</h1>
       <%= form_with model:@book, local:true do |f| %>
       <%= render 'books/error_messages', book: f.object %>
-      <p>Title</p>
+      <p>本のタイトル</p>
         <%= f.text_field :title %>
-      <p>Opinion</p>
-        <%= f.text_area :opinion %>
+      <p>感想</p>
+        <%= f.text_area :body %>
       <p>
         <%= f.submit 'Update Book' %>
       </p>

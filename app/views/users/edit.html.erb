@@ -4,7 +4,7 @@
       <h1>User info</h1>
       <%= form_with model:@user, local:true do |f| %>
       <%= render 'users/error_messages', user: f.object %>
-        <label for="inputName">Name</label>
+        <label for="inputName">名前</label>
         </p>
         <p>
         <%= f.text_field :name, autofocus: true, id:"inputName"%>
@@ -19,12 +19,12 @@
         <%= f.attachment_field :profile_image %>
         </p>
         <p>
-        <label for="inputIntroduction">Introduction</label>
+        <label for="inputIntroduction">自己紹介文</label>
         </p>
         <p>
         <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction"%>
         </p>
-        <%= f.submit "Update user" %>
+        <%= f.submit "Update User" %>
       <% end %>
     </div>
   </div>

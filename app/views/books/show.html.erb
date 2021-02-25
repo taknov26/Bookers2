@@ -9,8 +9,8 @@
         <table class="table table-hover table-inverse">
           <thead>
             <th colspan="1"></th>
-            <th>Title</th>
-            <th>Opinion</th>
+            <th>本のタイトル</th>
+            <th>感想</th>
           </thead>
           <tbody>
             <td><%= link_to @book_find.user do %>
@@ -22,10 +22,10 @@
               <%= @book_find.title %>
               <% end %>
               </td>
-              <td><%= @book_find.opinion %></td>
+              <td><%= @book_find.body %></td>
               <% if @book_find.user == current_user %>
               <td><%= link_to "Edit", edit_book_path %></td>
-              <td><%= link_to "Delete", book_path, method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
+              <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
               <% end %>
           </tbody>
         </table>

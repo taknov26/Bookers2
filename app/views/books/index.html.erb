@@ -9,8 +9,8 @@
         <table class="table table-hover table-inverse">
           <thead>
           <th colspan="1"></th>
-          <th>Title</th>
-          <th>Opinion</th>
+          <th>本のタイトル</th>
+          <th>感想</th>
           </thead>
           <tbody>
           <% @books.each do |book| %>
@@ -21,7 +21,7 @@
             <td><%= link_to book do %>
               <%= book.title %>
               <% end %></td>
-            <td><%= book.opinion %></td>
+            <td><%= book.body %></td>
           </tbody>
           <% end %>
         </table>
