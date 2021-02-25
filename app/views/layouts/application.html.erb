@@ -20,32 +20,46 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to "Home", user_path(current_user.id), class: 'nav-link text-light' %>
+              <li class="nav-item ">
+                <%= link_to user_path(current_user.id), class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
                </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="/users"><i class="fas fa-users"></i> Users</a>
+              <li class="nav-item ">
+                <%= link_to users_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-users"></i> Users
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/books"><i class="fas fa-book-open"></i> Books</a>
+                <%= link_to books_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-book-open"></i> Books
+                <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
-                <a class="fas fa-sign-out-alt nav-link text-light" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a>
-                <a class="nav-link text-light" href="/users/sign_out"><i class="fas fa-sign-out-alt"></i> logout</a>
+                <%= link_to destroy_user_session_path, class: 'nav-link text-light', method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i> logout</a>
+                <% end %>
               </li>
             <% else %>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/"><i class="fas fa-home"></i> Home</a>
+                <%= link_to root_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/homes/about"><i class="fas fa-link"></i> About</a>
+                <%= link_to homes_about_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-link"></i> About
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/users/sign_up"><i class="fas fa-user-plus"></i> sign up</a>
+                <%= link_to new_user_registration_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-user-plus"></i> sign up
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/users/sign_in"><i class="fas fa-sign-in-alt"></i> login</a>
+                <%= link_to new_user_session_path, class: 'nav-link text-light', method: :get do %>
+                  <i class="fas fa-sign-in-alt"></i> sign up
+                <% end %>
               </li>
             <% end %>
             </ul>

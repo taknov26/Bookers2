@@ -1,3 +1,4 @@
+
   <h2>User info</h2>
     <div class="profile-image">
     <%= attachment_image_tag user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"100x100" %>
@@ -16,9 +17,23 @@
         </tr>
     </table>
     <% if @user == current_user %>
-    <p><%= link_to "プロフィール編集ロゴ", edit_user_path(@user) %></p>
+    <div class="row">
+      <div class="btn-wrapper col-12 mx-auto">
+        <p><%= link_to edit_user_path(@user), class:'btn btn-outline-secondary btn-sm btn-block', method: :get do %>
+          <i class="fas fa-cog"></i>
+           <% end %>
+        </p>
+      </div>
+    </div>
     <% else %>
-    <p><%= link_to "プロフィール編集ロゴ", user_path(current_user.id) %></p>
+    <div class="row">
+      <div class="btn-wrapper col-12 mx-auto">
+        <p><%= link_to user_path(current_user.id), class:'btn btn-outline-secondary btn-sm btn-block', method: :get do %>
+          <i class="fas fa-cog"></i>
+           <% end %>
+        </p>
+      </div>
+    </div>
     <% end %>
 
 
