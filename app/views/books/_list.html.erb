@@ -1,30 +1,30 @@
+<h2>User info</h2>
+<div class="profile-image">
+  <%= attachment_image_tag user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"100x100" %>
+</div>
 
-  <h2>User info</h2>
-    <div class="profile-image">
-    <%= attachment_image_tag user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"100x100" %>
-    </div>
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>名前</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>自己紹介文</th>
+      <th><%= user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
 
-    <table class="table">
-      <tbody>
-        <tr></tr>
-        <tr>
-          <th>名前</th>
-          <th><%= user.name %></th>
-        </tr>
-        <tr>
-          <th>自己紹介文</th>
-          <th><%= user.introduction %></th>
-        </tr>
-    </table>
-
-    <div class="row">
-      <div class="btn-wrapper col-12 mx-auto">
-        <p><%= link_to edit_user_path(user), class:'btn btn-outline-secondary btn-sm btn-block', method: :get do %>
-          <i class="fas fa-user-cog"></i>
-           <% end %>
-        </p>
-      </div>
-    </div>
+<div class="row">
+  <div class="btn-wrapper col-12 mx-auto">
+    <p><%= link_to edit_user_path(user), class:'btn btn-outline-secondary btn-sm btn-block', method: :get do %>
+      <i class="fas fa-user-cog"></i>
+       <% end %>
+    </p>
+  </div>
+</div>
 
 
 
@@ -35,6 +35,6 @@
   <%= f.text_field :title %>
 <h4>感想</h4>
   <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
+  <%= f.submit 'Create Book', class: 'btn btn-primary' %>
 <% end %>
 

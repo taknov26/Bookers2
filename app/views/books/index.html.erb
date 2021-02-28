@@ -6,25 +6,25 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
-        <table class="table table-hover table-inverse">
-          <thead>
+      <table class="table table-hover table-inverse">
+        <thead>
           <th colspan="1"></th>
           <th>本のタイトル</th>
           <th>感想</th>
-          </thead>
-          <tbody>
+        </thead>
+        <tbody>
           <% @books.each do |book| %>
-            <td><%= link_to book.user do %>
-                <%= attachment_image_tag book.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"60x60" %>
-                <% end %>
-            </td>
-            <td><%= link_to book do %>
-              <%= book.title %>
-              <% end %></td>
-            <td><%= book.body %></td>
-          </tbody>
+          <td><%= link_to book.user do %>
+              <%= attachment_image_tag book.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"60x60" %>
+              <% end %>
+          </td>
+          <td><%= link_to book do %>
+            <%= book.title %>
+            <% end %></td>
+          <td><%= book.body %></td>
+        </tbody>
           <% end %>
-        </table>
+      </table>
     </div>
   </div>
 </div>

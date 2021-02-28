@@ -6,29 +6,30 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <th colspan="1"></th>
-            <th>本のタイトル</th>
-            <th>感想</th>
-          </thead>
-          <tbody>
-            <td><%= link_to @book_find.user do %>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <th colspan="1"></th>
+          <th>本のタイトル</th>
+          <th>感想</th>
+        </thead>
+        <tbody>
+          <td><%= link_to @book_find.user do %>
               <%= attachment_image_tag @book_find.user, :profile_image, format:'jpeg', fallback: "no_image.jpg", size:"60x60" %>
-              </br><%= @book_find.user.name %>
+          </br>
+              <%= @book_find.user.name %>
               <% end %>
-              </td>
-              <td><%= link_to @book_find do %>
+          </td>
+          <td><%= link_to @book_find do %>
               <%= @book_find.title %>
               <% end %>
-              </td>
-              <td><%= @book_find.body %></td>
+          </td>
+          <td><%= @book_find.body %></td>
               <% if @book_find.user == current_user %>
-              <td><%= link_to "Edit", edit_book_path %></td>
-              <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
+          <td><%= link_to "Edit", edit_book_path %></td>
+          <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に削除しますか？"%></td>
               <% end %>
-          </tbody>
-        </table>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
